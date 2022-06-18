@@ -7,7 +7,7 @@
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         
-        # DFS solution
+        # DFS solution 
         
         inorder_res = []
         def dfs(root, res):
