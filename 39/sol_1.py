@@ -15,7 +15,7 @@ class Solution:
                 
                 # current_sum < target, so we add num to the path
                 dfs(cur_diff - num, path + [num], candidates.index(num))  # since same number may be chosen from candidates an unlimited number of times, 
-                # the starting_index of candidates for next dfs could be the identical to the current index
+                # the starting_index of candidates for next dfs could be the identical to the current starting index
         
         candidates.sort()
         res = []
