@@ -5,6 +5,7 @@ class Solution:
         def dfs(cur_diff, path):
             if cur_diff == 0:  # current_sum = target
                 res.append(path)
+                return
                 
             for num in candidates:
                 
