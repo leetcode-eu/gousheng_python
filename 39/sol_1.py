@@ -6,15 +6,16 @@ class Solution:
             if cur_diff == 0:  # current_sum = target
                 res.append(path)
                 
-            for n in candidates:
-                if n > cur_diff:  # the sum would be > target cuz candidates is sorted list
-                    break
+            for num in candidates:
                 
-                if path and n < path[-1]:  # Due to requirement of unique combinations, can't use previous number used already
+                if path and num < path[-1]:  # Due to requirement of unique combinations, can't use previous number used already
                     continue
                 
+                if num > cur_diff:  # the sum would be > target cuz candidates is sorted list
+                    break
+                
                 # current_sum < target, so we add n to the path
-                dfs(cur_diff - n, path + [n])
+                dfs(cur_diff - num, path + [num])
                 
         res = []
         candidates.sort()
