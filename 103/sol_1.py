@@ -18,7 +18,7 @@ class Solution:
             size_of_same_level = len(deque)
             values_of_same_level = []
             
-            while size_of_same_level:  # 妙在这里
+            while size_of_same_level:  # # here is a good idea since we only iterate nodes of a certain level in each outer loop
                 node = deque.pop(0)
 
                 values_of_same_level.append(node.val)
@@ -33,7 +33,7 @@ class Solution:
                 value_list.append(values_of_same_level)
                 flag = False
             else:
-                value_list.append(values_of_same_level[::-1])  # 这是和 102 的不同之处
+                value_list.append(values_of_same_level[::-1])  # here is the difference from question 102
                 flag = True
         
         return value_list
