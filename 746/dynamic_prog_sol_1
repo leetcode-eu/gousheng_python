@@ -1,0 +1,20 @@
+class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        
+        # This question seems like a greedy algorithm if you take a look at the answer first,
+        # however, the given conditions in this question is like we have the chance to give up 
+        # each stair but must choose its adjancent stair for the cost because each time can 
+        # either climb one or two steps
+        
+        # base case: cost[0], cost[1]
+        # pattern: cost[i] = min(cost[i-2], cost[i-1])
+        
+        length_of_cost = len(cost)
+        
+        if length_of_cost <= 2:
+            return min(cost)
+
+        for i in range(2, length_of_cost):
+            cost[i] += min(cost[i-2], cost[i-1])
+            
+        return min(cost[-2], cost[-1])
