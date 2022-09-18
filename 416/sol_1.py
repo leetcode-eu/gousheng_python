@@ -12,9 +12,9 @@ class Solution:
             
         # Create the dynamic programming matrix
         dp_matrix = [[False]*(target_value+1) for _ in range(n+1)]
-        dp_matrix[0][0] = True  # The reason why dp_matrix[0][0] is True is: it is the base case for succeeding cases in dp_matrix, e.g. nums[0] = 5, and when j is traversed to be 5, dp_matrix[0][5] becomes True
+        dp_matrix[0][0] = True  # The reason why dp_matrix[0][0] is True is: it is the base case for succeeding cases in dp_matrix, e.g. nums[0] = 5, and when j is traversed to be 5, dp_matrix[0][5] becomes True, that's why we have one more aditional line on top on of dp_matrix
         
-        for i in range(1, n+1):
+        for i in range(1, n+1):  # we have one more aditional line on top, so line 1 represents num[0], i.e. the first number
             for j in range(target_value+1):
                 if nums[i-1] > j:  # as nums[i] is already > j, just take a look at the previous one, i.e. dp_matrix[i-1][j]
                     dp_matrix[i][j] = dp_matrix[i-1][j]
