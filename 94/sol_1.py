@@ -13,15 +13,19 @@ class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         
         # DFS solution 
-        
-        inorder_res = []
-        def dfs(root, res):
-            if not root:
+
+        def dfs(node, res):
+            if not node:
                 return
-            dfs(root.left, res)
-            res.append(root.val)
-            dfs(root.right, res)
-            
-        dfs(root, inorder_res)
+
+            dfs(node.left, res)
+            res.append(node.val)
+            dfs(node.right, res)
+            return res
+
+        if not root:
+            return []
+        else:
+            dfs(root, [])
         
-        return inorder_res
+        return dfs(root, [])
