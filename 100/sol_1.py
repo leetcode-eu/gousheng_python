@@ -1,9 +1,14 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+
+from typing import Optional, List
+
+
+class TreeNode:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+
+
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         
@@ -12,7 +17,7 @@ class Solution:
         # if they are equal
         
         # The modification is we also add None to the result list because two trees with same
-        # traversal result may have different structures
+        # traversal result may have different structures when None exists
         
         def PreOrder_Traversal_Breadth_First(root):
             
