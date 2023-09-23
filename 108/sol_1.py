@@ -16,9 +16,9 @@ class Solution:
             return None
         
         mid_index = len(nums)//2
-        node = TreeNode(nums[mid_index])
+        node      = TreeNode(nums[mid_index])
         
-        node.left =  self.sortedArrayToBST(nums[:mid_index])
+        node.left  =  self.sortedArrayToBST(nums[:mid_index])
         node.right = self.sortedArrayToBST(nums[mid_index+1:])  # there is a need to take much care of here, it's easy to write "mid_index" instead of "mid_index+1"
         
         return node
