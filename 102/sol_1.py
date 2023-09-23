@@ -1,9 +1,14 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+
+from typing import Optional, List
+
+
+class TreeNode:
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+
+
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         
@@ -12,10 +17,11 @@ class Solution:
         
         deque = []
         deque.append(root)
+
         value_list = []  # to be returned
         
         while deque:
-            size_of_same_level = len(deque)
+            size_of_same_level   = len(deque)
             values_of_same_level = []
             
             while size_of_same_level:  # 妙在这里
