@@ -1,3 +1,8 @@
+
+from typing import List
+import collections
+
+
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         
@@ -9,7 +14,7 @@ class Solution:
         
         pre_posts = collections.defaultdict(set)
         post_pres = collections.defaultdict(set)
-        res = []  # saving the basic sequence
+        res       = []  # saving the basic sequence
         
         for post, pre in prerequisites:
             pre_posts[pre].add(post)
