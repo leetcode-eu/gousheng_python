@@ -1,5 +1,5 @@
 
-from typing import Optional, List
+from typing import Optional
 
 
 # Definition for singly-linked list.
