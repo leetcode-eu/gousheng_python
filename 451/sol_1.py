@@ -1,6 +1,7 @@
 
 import collections
 
+
 class Solution:
     def frequencySort(self, s: str) -> str:
         hash_map = collections.Counter(s)
