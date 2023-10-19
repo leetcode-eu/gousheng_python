@@ -1,6 +1,7 @@
 
 from typing import List
 
+
 def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
     dp_map         = [ [float('inf') ] *n for _ in range( k +2)]
     dp_map[0][src] = 0
