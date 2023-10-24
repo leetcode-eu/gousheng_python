@@ -16,29 +16,31 @@ class Solution:
         if not l2:
             return l1
 
-        dummy_head = current_node = ListNode(0)
-        carry = 0
+        dummy_head = previous_node = ListNode(0)
+        carry      = 0
 
         while l1 or l2:
+
             if l1 is not None:
-                a = l1.val
+                a  = l1.val
                 l1 = l1.next
             else:
                 a = 0
 
             if l2 is not None:
-                b = l2.val
+                b  = l2.val
                 l2 = l2.next
             else:
                 b = 0
 
-            sum_digit = (a + b + carry) % 10
-            carry = (a + b + carry) // 10
-            current_node.next = ListNode(sum_digit)
+            sum_digit          = (a + b + carry) % 10
+            carry              = (a + b + carry) // 10
+            current_node       = ListNode(sum_digit)
+            previous_node.next = current_node
 
-            current_node = current_node.next
+            previous_node      = current_node
 
         if carry == 1:
-            current_node.next = ListNode(carry)
+            previous_node.next = ListNode(carry)
 
         return dummy_head.next
