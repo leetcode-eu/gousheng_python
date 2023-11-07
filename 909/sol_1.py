@@ -23,10 +23,10 @@ class Solution:
 
             return row_num, col_num
 
-        deque = [(1, 0)]
+        queue = [(1, 0)]
         visited.add(1)
-        while deque:
-            id_number, step = deque.pop(0)
+        while queue:
+            id_number, step = queue.pop(0)
 
             if id_number == n * n:
                 return step
@@ -41,9 +41,9 @@ class Solution:
                     board_value = board[row_num][col_num]
 
                     if board_value != -1:
-                        deque.append((board_value, step + 1))
+                        queue.append((board_value, step + 1))
                     else:
-                        deque.append((new_id_number, step + 1))
+                        queue.append((new_id_number, step + 1))
 
         return -1
 
