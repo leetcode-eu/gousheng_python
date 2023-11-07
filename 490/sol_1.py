@@ -7,12 +7,12 @@ class Solution:
 
         num_rows, num_cols = len(maze), len(maze[0])
         directions         = [[-1,0], [1,0], [0,-1], [0,1] ]
-        deque              = [start]
+        queue              = [start]
         visited            = set()
         visited.add((start[0], start[1]))
 
-        while deque:
-            poped_y, poped_x = deque.pop(0)
+        while queue:
+            poped_y, poped_x = queue.pop(0)
 
             if [poped_y, poped_x] == destination:
                 return True
@@ -30,7 +30,7 @@ class Solution:
 
                 if (y, x) not in visited:
                     visited.add((y, x))
-                    deque.append([y, x])
+                    queue.append([y, x])
 
         return False
 
