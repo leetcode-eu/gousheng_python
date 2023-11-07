@@ -5,7 +5,7 @@ from typing import List
 class Solution:
     def shortestDistance(self, maze: List[List[int]], start: List[int], destination: List[int]) -> int:
         num_rows, num_cols = len(maze), len(maze[0])
-        directions                   = [[-1 ,0], [0 ,-1], [0 ,1], [1 ,0]]
+        directions                   = [[-1,0], [0,-1], [0,1], [1,0]]
         step_map                     = [[float('inf') for _ in range(num_cols)] for _ in range(num_rows)]
         step_map[start[0]][start[1]] = 0
         queue                        = [start]
