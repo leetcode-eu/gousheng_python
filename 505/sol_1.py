@@ -8,10 +8,10 @@ class Solution:
         directions                   = [[-1 ,0], [0 ,-1], [0 ,1], [1 ,0]]
         step_map                     = [[float('inf') for _ in range(num_cols)] for _ in range(num_rows)]
         step_map[start[0]][start[1]] = 0
-        deque                        = [start]
+        queue                        = [start]
 
-        while deque:
-            poped_y, poped_x = deque.pop(0)
+        while queue:
+            poped_y, poped_x = queue.pop(0)
 
             for dy, dx in directions:
                 y        = poped_y + dy
@@ -29,7 +29,7 @@ class Solution:
 
                 if step_map[poped_y][poped_x] + distance < step_map[y][x]:
                     step_map[y][x] = step_map[poped_y][poped_x] + distance
-                    deque.append([y, x])
+                    queue.append([y, x])
 
         shortest_distance = step_map[destination[0]][destination[1]]
 
