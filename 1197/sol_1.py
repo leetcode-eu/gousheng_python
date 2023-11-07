@@ -4,24 +4,24 @@ class Solution:
 
         directions = [(-2 ,1), (-1 ,2), (1 ,2), (2 ,1), (2 ,-1), (1 ,-2), (-1 ,-2), (-2 ,-1)]
         target     = [x ,y]
-        deque      = [(0 ,0)]
+        queue      = [(0 ,0)]
         visited    = set()
         visited.add((0 ,0))
         step       = 0
 
-        while deque:
+        while queue:
 
-            for _ in range(len(deque)):
+            for _ in range(len(queue)):
 
                 # 1.
-                x_val, y_val = deque.pop(0)
+                x_val, y_val = queue.pop(0)
                 if [x_val, y_val] == target:
                     return step
 
                 # 2.
                 for x_dir, y_dir in directions:
                     if (x_val +x_dir, y_val +y_dir) not in visited:
-                        deque.append((x_val + x_dir, y_val + y_dir))
+                        queue.append((x_val + x_dir, y_val + y_dir))
                         visited.add((x_val + x_dir, y_val + y_dir))
 
             # 3.
