@@ -4,7 +4,7 @@ from typing import List
 
 class Solution:
     def snakesAndLadders(self, board: List[List[int]]) -> int:
-        n = len(board)
+        n       = len(board)
         visited = set()
 
         def id_to_rc(id_number):
