@@ -38,7 +38,7 @@ class Solution:
 
                     visited.add(new_id_number)
                     row_num, col_num = id_to_rc(new_id_number)
-                    board_value = board[row_num][col_num]
+                    board_value      = board[row_num][col_num]
 
                     if board_value != -1:
                         queue.append((board_value, step + 1))
